@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: white;
+  --secondary-color: #007aff;
+  --tertiary-color: #f2f2f7;
+  --std-padding: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-block-size: 100vh;
+  justify-content: space-between;
+  padding: var(--std-padding);
+}
+
+.container {
+  flex: 1;
+  max-inline-size: 50rem;
+  margin: 0 auto;
+  inline-size: 100%;
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 2.5rem;
+}
+
+.flashcard-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  inline-size: 100%;
+  max-inline-size: 37.5rem;
+}
+
+.flashcard {
+  aspect-ratio: 4/3;
+  background: var(--primary-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  padding: var(--primary-color);
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.flashcard:hover {
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--std-padding);
+  justify-content: space-between;
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: var(--tertiary-color);
+}
+
+.flashcard-question,
+.flashcard-answer {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1d1d1f;
+  line-height: 1.4;
+}
+
+.flashcard-answer {
+  color: var(--secondary-color);
+}
+
+.flip-button {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  inline-size: 2rem;
+  block-size: 2rem;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.flip-button:hover {
+  background: #0056cc;
+}
+
+.refresh-button {
+  inline-size: 3.75rem;
+  block-size: 3.75rem;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 2.5rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 122, 255, 0.3);
+}
+
+.refresh-button:hover {
+  background: #0056cc;
+  transform: scale(1.05);
+}
+
+.refresh-button:active {
+  transform: scale(0.95);
+}
+
+.nav-bar {
+  background: var(--primary-color);
+  border-radius: 1.5625rem;
+  box-shadow: 0 0.125rem 0.9375rem rgba(0, 0, 0, 0.1);
+  inline-size: 100%;
+  max-inline-size: 31.25rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nav-item {
+  flex: 1;
+  padding: 0.9375rem 1.25rem;
+  font-weight: 500;
+  color: #8e8e93;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-right: 0.0625rem solid var(--tertiary-color);
+}
+
+.nav-item:last-child {
+  border-right: none;
+}
+
+.nav-item:hover {
+  background: var(--tertiary-color);
+  color: var(--secondary-color);
+}
+
+.nav-item.active {
+  color: var(--secondary-color);
+  background: var(--tertiary-color);
+}
+
+@media (max-width: 48rem) {
+  .header {
+    font-size: 2rem;
+    margin-bottom: 1.875rem;
+  }
+
+  .flashcard-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9375rem;
+    max-inline-size: 21.875rem;
+  }
+
+  .flashcard {
+    padding: 0.9375rem;
+    block-size: 9.375rem;
+    inline-size: 21.875rem;
+  }
+
+  .flashcard-question {
+    font-size: 1rem;
+  }
+
+  .nav-item {
+    padding: 0.75rem 0.9375rem;
+    font-size: 0.9rem;
+  }
+}

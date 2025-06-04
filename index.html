@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcard APP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="flex flex-col">
+    <div class="container flex flex-col items-center justify-center">
+      <h1 class="header text-center">Flashcard APP</h1>
+      <div class="flashcard-grid grid">
+        <div class="flashcard flex flex-col">
+          <div class="flashcard-front flex flex-col">
+            <p class="flashcard-question">
+              What is the difference between map() and forEach() in JavaScript?
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+          <div class="flashcard-back flex flex-col">
+            <p class="flashcard-answer">
+              map() returns a new array with transformed elements, while
+              forEach() executes a function for each element without returning
+              anything.
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+        </div>
+        <div class="flashcard flex flex-col">
+          <div class="flashcard-front flex flex-col">
+            <p class="flashcard-question">
+              How do you create a for...of loop in JavaScript?
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+          <div class="flashcard-back flex flex-col">
+            <p class="flashcard-answer">
+              for (const item of array) { // code here }
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+        </div>
+        <div class="flashcard flex flex-col">
+          <div class="flashcard-front flex flex-col">
+            <p class="flashcard-question">
+              What does the slice() method do to a string?
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+          <div class="flashcard-back flex flex-col">
+            <p class="flashcard-answer">
+              slice() extracts a section of a string and returns it as a new
+              string without modifying the original string.
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+        </div>
+        <div class="flashcard flex flex-col">
+          <div class="flashcard-front flex flex-col">
+            <p class="flashcard-question">
+              How can you check if an array includes a specific element?
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+          <div class="flashcard-back flex flex-col">
+            <p class="flashcard-answer">
+              Use the includes() method: array.includes(element) - returns true
+              or false.
+            </p>
+            <button class="flip-button flex items-center justify-center">
+              ↻
+            </button>
+          </div>
+        </div>
+      </div>
+      <button class="refresh-button flex items-center justify-center">↻</button>
+    </div>
+    <ul class="nav-bar flex">
+      <li class="nav-item active text-center">Array Methods</li>
+      <li class="nav-item text-center">Loops</li>
+      <li class="nav-item text-center">String Methods</li>
+    </ul>
+    <script src="./script.js"></script>
+  </body>
+</html>
